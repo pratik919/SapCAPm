@@ -14,7 +14,7 @@ build-parameters:
 modules:
   - name: CapMProj-srv
     type: nodejs
-    path: gen/srv
+    path: srv
     parameters:
       buildpack: nodejs_buildpack
     build-parameters:
@@ -23,3 +23,20 @@ modules:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
+    requires:
+      - name: CapMProj-db
+
+  - name: CapMProj-db-deployer
+    type: hdb
+    path: db
+    parameters:
+      buildpack: nodejs_buildpack
+    requires:
+      - name: CapMProj-db
+
+resources:
+  - name: CapMProj-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared

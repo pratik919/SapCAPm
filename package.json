@@ -10,9 +10,6 @@
         "express": "^4.18.2",
         "hdb": "^0.19.5"
     },
-    "devDependencies": {
-        "sqlite3": "^5.0.4"
-    },
     "scripts": {
         "start": "cds run"
     },
@@ -45,10 +42,21 @@
         }
     },
     "cds": {
-        "requires": {
-            "db": {
-                "kind": "hana-cloud"
+        "build": {
+        "tasks": [
+            {
+            "for": "hana",
+            "dest": "../db"
+            },
+            {
+            "for": "node-cf"
             }
+        ]
+        },
+        "requires": {
+        "db": {
+            "kind": "hana-cloud"
+        }
         }
     }
 }
