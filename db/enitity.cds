@@ -1,5 +1,5 @@
 using {Currency, managed, sap} from '@sap/cds/common';
-namespace db;
+namespace CapMProj.db;
 
 entity Books : managed {
     key ID : Integer;
