@@ -1,0 +1,48 @@
+<mvc:View controllerName="dashboard.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+        	<IconTabBar id="IconTab" selectedKey="BooksHana" >
+                <content>
+                    <Table id="Books"
+                    items="{/Books}">
+                        <columns>
+                    <Column id="nameColumn">
+                        <Text text="ID" id="nameColumnTitle"/>
+                    </Column>
+                    <Column id="unitNumberColumn">
+                        <Text text="Title" id="unitNumberColumnTitle"/>
+                    </Column>
+                    <Column id="Des">
+                        <Text text="Description" id="cellDes"/>
+                    </Column>
+                    <Column id="AuthorID">
+                        <Text text="Author ID" id="CellAuthID"/>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem id="CLbook"
+                        type="Navigation"
+                        >
+                        <cells>
+                            <ObjectIdentifier id="IDCell"
+                                text="{ID}"/>
+                            <Text id="titlText" text="{title}"/>
+                            <Text id="DesText" text="{descr}"/>
+                            <Text id="AutIDText" text="{author_ID}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+                    </Table>
+                </content>
+                <items>
+                <IconTabFilter id="HANA" key="BooksHana" text="Books From HANA" />
+                    <IconTabFilter id="JSON" key="BooksJSON" text="Books From JSON" />
+                    <IconTabFilter id ="Dest" key="notesDest" text="Books FROM Dest" />  
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

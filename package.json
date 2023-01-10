@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "cds run",
-    "watch-bookshop": "cds watch --open bookshop/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-bookshop": "cds watch --open bookshop/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-dashboard": "cds watch --open dashboard/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "engines": {
     "node": "^16.15"
@@ -70,7 +71,8 @@
     }
   },
   "sapux": [
-    "app/bookshop"
+    "app/bookshop",
+    "app/dashboard"
   ],
   "devDependencies": {
     "@sap/ux-specification": "^1.102.14"

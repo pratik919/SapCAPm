@@ -52,30 +52,42 @@
                     </OverflowToolbar>
                 </headerToolbar>
 
-                <columns>
-                    <Column id="nameColumn">
-                        <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
-                    </Column>
-                    <Column id="unitNumberColumn" hAlign="End">
-                        <Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
-                    </Column>
-                </columns>
+                    <columns>
+                        <Column id="nameColumn">
+                            <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
+                        </Column>
+                        <Column id="titlCol">
+                        <Text text="Title" id="titTe"/>
+                        </Column>
+                        <Column id="Des">
+                            <Text text="Description" id="cellDes"/>
+                        </Column>
+                        <Column id="AuthorID">
+                            <Text text="Author ID" id="CellAuthID"/>
+                        </Column>
+                        <Column id="unitNumberColumn" hAlign="End">
+                            <Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+                        </Column>
+                    </columns>
 
-                <items>
-                    <ColumnListItem
-                        type="Navigation"
-                        press=".onPress">
-                        <cells>
-                            <ObjectIdentifier
-                                title="{ID}"/>
-                            <ObjectNumber
-                                number="{
-                                    path: 'ID',
-                                    formatter: '.formatter.numberUnit'
-                                }" />
-                        </cells>
-                    </ColumnListItem>
-                </items>
+                    <items>
+                        <ColumnListItem
+                            type="Navigation"
+                            press=".onPress">
+                            <cells>
+                                <ObjectIdentifier
+                                    title="{ID}"/>
+                                <Text id="titlText" text="{title}"/>
+                                <Text id="DesText" text="{descr}"/>
+                                <Text id="AutIDText" text="{author_ID}"/>
+                                <ObjectNumber
+                                    number="{
+                                        path: 'ID',
+                                        formatter: '.formatter.numberUnit'
+                                    }" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
             </Table>
         </semantic:content>
 
