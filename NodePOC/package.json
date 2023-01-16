@@ -1,0 +1,22 @@
+{
+  "name": "NodePOC",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "main": "NodeApi.js",
+  "dependencies": {
+    "@sap/cds": "^6",
+    "@sap/xsenv": "^3.4.0",
+    "cfenv": "^1.2.4",
+    "express": "^4",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "scripts": {
+    "start": "node NodeApi"
+  },
+  "engines": {
+    "node": "^16.15"
+  }
+}

@@ -1,0 +1,8 @@
+---
+applications:
+- name: NodePOC
+  path: .
+  memory: 128M
+  services:
+  - uaa-srv
+  - destination-srv
